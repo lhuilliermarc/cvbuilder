@@ -5,10 +5,21 @@ export default function Home() {
     <div>
       <div className="lg-block">
         <section className="flex items-center h-screen">
-          <div className="w-1/3 h-full p-10 bg-base-200">
-            test
+          <div className="w-1/3 h-full p-10 bg-base-200 scrollable no-scrolbar">
+            <div className="mb-4 flex justify-between item-center">
+              <h1 className="text-2xl font-bold italic">
+                CV
+                <span className="text-primary">Builder</span>
+              </h1>
+              <button className="btn btn-primary">
+                Prévisualiser
+              </button>
+            </div>
+            <div>
+
+            </div>
           </div>
-          <div className="w-2/3 h-full bg-base-100 bg-[url('/file.svg')]">
+          <div className="w-2/3 h-full bg-base-100 bg-[url('/file.svg')] bg-cover bg-center scrollable-preview">
             test
           </div>
         </section>
