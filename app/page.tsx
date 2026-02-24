@@ -1,6 +1,14 @@
+"use client"
+import { Eye, RotateCw } from "lucide-react";
 import Image from "next/image";
+import PersonalDetailsForm from "./components/PersonalDetailsForm";
+import { useState } from "react";
+import { PersonalDetails } from "@/type";
+import { personalDetailsPreset } from "@/presets";
 
 export default function Home() {
+  const [personalDetails, setPersonalDetails] = useState<PersonalDetails>(personalDetailsPreset)
+  const [file, setFile] = useState<File | null>(null)
   return (
     <div>
       <div className="lg-block">
@@ -13,10 +21,21 @@ export default function Home() {
               </h1>
               <button className="btn btn-primary">
                 Prévisualiser
+                <Eye className="w-4"/>
               </button>
             </div>
-            <div>
-
+            <div className="flex flex-col gap-6 rounded-lg">
+              <div className="flex justify-between items-center">
+                <h1 className="badge badge-primary badge-outline">Qui êtes vous ?</h1>
+                <button className="btn btn-primary btn-sm">
+                  <RotateCw className="w-4"/>
+                </button>
+              </div>
+              <PersonalDetailsForm
+                personalDetails={personalDetails}
+                setPersonalDetails={setPersonalDetails}
+                setFile={setFile}
+              />
             </div>
           </div>
           <div className="w-2/3 h-full bg-base-100 bg-[url('/file.svg')] bg-cover bg-center scrollable-preview">
