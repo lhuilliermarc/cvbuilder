@@ -5,13 +5,53 @@ import PersonalDetailsForm from "./components/PersonalDetailsForm";
 import { useState } from "react";
 import { PersonalDetails } from "@/type";
 import { personalDetailsPreset } from "@/presets";
+import CVPreview from "./components/CVPreview";
 
 export default function Home() {
   const [personalDetails, setPersonalDetails] = useState<PersonalDetails>(personalDetailsPreset)
   const [file, setFile] = useState<File | null>(null)
+  const [theme, setTheme] = useState<string>("cupcake")
+  const themes = [
+    "light",
+    "dark",
+    "cupcake",
+    "bumblebee",
+    "emerald",
+    "corporate",
+    "synthwave",
+    "retro",
+    "cyberpunk",
+    "valentine",
+    "halloween",
+    "garden",
+    "forest",
+    "aqua",
+    "lofi",
+    "pastel",
+    "fantasy",
+    "wireframe",
+    "black",
+    "luxury",
+    "dracula",
+    "cmyk",
+    "autumn",
+    "business",
+    "acid",
+    "lemonade",
+    "night",
+    "coffee",
+    "winter",
+    "dim",
+    "nord",
+    "sunset",
+    "caramellatte",
+    "abyss",
+    "sylk",
+  ]
+
   return (
     <div>
-      <div className="lg-block">
+      <div className="hidden lg:block">
         <section className="flex items-center h-screen">
           <div className="w-1/3 h-full p-10 bg-base-200 scrollable no-scrolbar">
             <div className="mb-4 flex justify-between item-center">
@@ -39,7 +79,13 @@ export default function Home() {
             </div>
           </div>
           <div className="w-2/3 h-full bg-base-100 bg-[url('/file.svg')] bg-cover bg-center scrollable-preview">
-            test
+            <div className="flex justify-center items-center">
+              <CVPreview
+                personalDetails={personalDetails}
+                file={file}
+                theme={theme}
+              />
+            </div>
           </div>
         </section>
       </div>
