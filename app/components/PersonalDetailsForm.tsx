@@ -8,9 +8,69 @@ type Props = {
 }
 
 const PersonalDetailsForm: React.FC<Props> = ({ personalDetails, setPersonalDetails, setFile }) => {
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>, fied: keyof PersonalDetails) => {
+    setPersonalDetails({ ...personalDetails, [fied]: e.target.value })
+    }
+
+    const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const selectedFile = e.target.files?.[0]
+        if(selectedFile){
+            setFile(selectedFile)
+        }
+    }
+
     return (
         <div className="flex flex-col gap-4">
-
+            <input
+                type="text"
+                placeholder="Nom complet"
+                value={personalDetails.fullName}
+                onChange={(e) => handleChange(e, 'fullName')}
+                className="input input-bordered w-full"
+            />
+            <div>
+                <input
+                    type="email"
+                    placeholder="Email"
+                    value={personalDetails.email}
+                    onChange={(e) => handleChange(e, 'email')}
+                    className="input input-bordered w-1/2"
+                />
+                <input
+                    type="email"
+                    placeholder="Numéro de téléphone"
+                    value={personalDetails.phone}
+                    onChange={(e) => handleChange(e, 'phone')}
+                    className="input input-bordered w-1/2"
+                />
+            </div>
+            <input
+                type="text"
+                placeholder="Adresse"
+                value={personalDetails.address}
+                onChange={(e) => handleChange(e, 'address')}
+                className="input input-bordered w-full"
+            />
+            <input
+                type="file"
+                accept="image/*"
+                onChange={handleFileChange}
+                className="file-input file-input-bordered w-full file-input-primary"
+            />
+            <input
+                type="text"
+                placeholder="Poste recherché"
+                value={personalDetails.postSeeking}
+                onChange={(e) => handleChange(e, 'postSeeking')}
+                className="input input-bordered w-full"
+            />
+            <textarea
+                placeholder="Votre description"
+                value={personalDetails.description}
+                onChange={(e) => handleChange(e, 'description')}
+                className="textarea textarea-bordered w-full"
+            ></textarea>
         </div>
     )
 }
