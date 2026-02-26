@@ -11,6 +11,7 @@ export default function Home() {
   const [personalDetails, setPersonalDetails] = useState<PersonalDetails>(personalDetailsPreset)
   const [file, setFile] = useState<File | null>(null)
   const [theme, setTheme] = useState<string>("cupcake")
+  const [zoom, setZoom] = useState<number>(163)
   const themes = [
     "light",
     "dark",
@@ -78,6 +79,17 @@ export default function Home() {
               />
             </div>
           </div>
+          <div className="w-2/3 h-full bg-base-100 bg-[url('/file.svg')] bg-cover bg-center scrollable-preview relative">
+          <div className="flex items-center justify-center fixed z-[9999] top-5 right-5">
+            <input 
+              type="range" 
+              min={50} 
+              max={200}
+              value={zoom}
+              onChange={(e) => setZoom(Number(e.target.value))}
+              className="range range-xs range-primary"/>
+              <p className="ml-4 text-sm text-primary">{zoom}%</p>
+          </div>
           <select
             value={theme}
             onChange={(e) => setTheme(e.target.value)}
@@ -88,9 +100,13 @@ export default function Home() {
                 {themeName}
               </option>
             ))}
-          </select>
-          <div className="w-2/3 h-full bg-base-100 bg-[url('/file.svg')] bg-cover bg-center scrollable-preview">
-            <div className="flex justify-center items-center">
+          </select>            
+            <div 
+              className="flex justify-center items-center"
+              style={{
+                transform : `scale(${zoom / 200})`
+              }}
+              >
               <CVPreview
                 personalDetails={personalDetails}
                 file={file}

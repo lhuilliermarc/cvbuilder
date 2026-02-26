@@ -1,32 +1,31 @@
 import { Education, Experience, Hobby, Language, PersonalDetails, Skill } from '@/type';
 
 export const personalDetailsPreset: PersonalDetails = {
-    fullName: 'John Doe',
-    email: 'johndoe@example.com',
-    phone: '+123456789',
-    address: '123, Avenue Example, Paris, France',
+    fullName: 'Kevin Stackoverflow',
+    email: 'kevin.stackoverflow@fullstack.dev',
+    phone: '+33 6 99 88 77 66',
+    address: '404 rue Not Found, 75000 Paris, France',
     photoUrl: '/profile.jpg',
-    postSeeking:'Chargé de Communication',
-    description:'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum'
-    
+    postSeeking:'Développeur Full Stack (survivant du legacy)',
+    description:'Développeur full stack passionné par les architectures propres, les commits clairs et les réunions qui auraient pu être un email. Je transforme le café en fonctionnalités et les bugs en "cas particuliers". À l’aise du pixel au serveur, je maîtrise aussi l’art ancestral du "ça fonctionnait hier".'
 };
 
 export const experiencesPreset: Experience[] = [
     {
         id: 'uuid-1',
-        jobTitle: 'Développeur Web',
-        companyName: 'Tech Solutions',
+        jobTitle: 'Développeur Full Stack',
+        companyName: 'StartupDisruptive.io',
         startDate: '2022-01-01',
-        endDate: '2023-01-01',
-        description: 'Développement d\'applications web en utilisant React et Node.js.'
+        endDate: '2024-01-01',
+        description: 'Développement d’applications en React, Node.js et base de données SQL. Refactorisation d’un projet legacy écrit "rapidement" en 2016. Mise en place de bonnes pratiques, CI/CD et suppression de 12 console.log stratégiquement oubliés.'
     },
     {
         id: 'uuid-2',
-        jobTitle: 'Chef de projet',
-        companyName: 'Innovatech',
+        jobTitle: 'Développeur Back-End',
+        companyName: 'API & Compagnie',
         startDate: '2020-06-01',
         endDate: '2022-01-01',
-        description: 'Gestion de projets techniques, coordination des équipes de développement.'
+        description: 'Création d’APIs REST robustes. Gestion de bases de données et optimisation de requêtes qui prenaient le temps d’une pause café. Responsable officiel des messages d’erreur "500 Internal Server Error".'
     }
 ];
 
@@ -34,24 +33,30 @@ export const educationsPreset: Education[] = [
     {
         id: 'uuid-3',
         degree: 'Master en Informatique',
-        school: 'Edu',
+        school: 'Université des Bugs Persistants',
         startDate: '2015-09-01',
         endDate: '2018-06-01',
-        description: 'Spécialisation en développement web et bases de données.'
+        description: 'Spécialisation en développement web, algorithmes et décryptage de messages d’erreur incompréhensibles. Mémoire soutenu sans StackOverflow (exploit validé).'
     }
 ];
 
 export const skillsPreset: Skill[] = [
-    { id: 'uuid-4', name: 'React.js' },
-    { id: 'uuid-5', name: 'Node.js' }
+    { id: 'uuid-4', name: 'React.js (oui, avec hooks propres)' },
+    { id: 'uuid-5', name: 'Node.js (promises > callbacks, toujours)' },
+    { id: 'uuid-6', name: 'TypeScript (parce que le futur moi mérite du respect)' },
+    { id: 'uuid-7', name: 'Docker (ça marche chez moi, donc partout)' },
+    { id: 'uuid-8', name: 'SQL & optimisation (SELECT * est un crime)' }
 ];
 
 export const languagesPreset: Language[] = [
-    { id: 'uuid-6', language: 'Anglais', proficiency: 'Avancé' },
-    { id: 'uuid-7', language: 'Français', proficiency: 'Débutant' }
+    { id: 'uuid-9', language: 'JavaScript', proficiency: 'Natif' },
+    { id: 'uuid-10', language: 'TypeScript', proficiency: 'Fluide et typé' },
+    { id: 'uuid-11', language: 'Anglais', proficiency: 'Courant (surtout pour lire les erreurs)' },
+    { id: 'uuid-12', language: 'Français', proficiency: 'Natif (avec ironie intégrée)' }
 ];
 
 export const hobbiesPreset: Hobby[] = [
-    { id: 'uuid-8', name: 'Voyager' },
-    { id: 'uuid-9', name: 'Lire des livres' }
+    { id: 'uuid-13', name: 'Refactoriser du code qui fonctionne "à peu près"' },
+    { id: 'uuid-14', name: 'Lire des threads techniques à 2h du matin' },
+    { id: 'uuid-15', name: 'Automatiser des tâches que j’aurais pu faire en 5 minutes' }
 ];
