@@ -78,6 +78,17 @@ export default function Home() {
               />
             </div>
           </div>
+          <select
+            value={theme}
+            onChange={(e) => setTheme(e.target.value)}
+            className="select select-bordered fixed z-[9999] select-sm top-12 right-5"
+          >
+            {themes.map((themeName) => (
+              <option key={themeName} value={themeName}>
+                {themeName}
+              </option>
+            ))}
+          </select>
           <div className="w-2/3 h-full bg-base-100 bg-[url('/file.svg')] bg-cover bg-center scrollable-preview">
             <div className="flex justify-center items-center">
               <CVPreview
